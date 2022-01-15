@@ -31,7 +31,7 @@ public class TeacherController {
 
     @GetMapping(value = "/getAll", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<TeacherDTO> getAllTeachers() {
-        return null;
+        return teacherServiceImpl.findAll();
     }
 
     @PostMapping(value = "/addTeacher", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
