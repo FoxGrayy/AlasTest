@@ -54,7 +54,7 @@ public class TeacherServiceImpl {
                 ("Teacher with the following id = " + id + " is not found.");
         }
         oldTeacher.get().setTeacherName(teacherDTO.getTeacherName());
-        oldTeacher.get().setTeacherName(teacherDTO.getTeacherName());
+        oldTeacher.get().setTeacherSurname(teacherDTO.getTeacherSurname());
         oldTeacher.get().setTeacherEmail(teacherDTO.getTeacherEmail());      
         teacherRepository.save(oldTeacher.get());
         return teacherMapper.transformToDTO(oldTeacher.get());
