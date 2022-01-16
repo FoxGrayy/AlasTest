@@ -1,15 +1,12 @@
 package test;
 
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class TeacherTest extends FunctionalTest {
 
 	@Test
 	public void newTeacher(){
 		
-		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000/teacher");		
         TeachersPage teachersPage = new TeachersPage(driver);              
@@ -21,14 +18,12 @@ public class TeacherTest extends FunctionalTest {
         teachersPage.clickOnEmail();
         teachersPage.enterEmail("55233fdsfds@gmail.com");            
         teachersPage.clickOnSave();
-        
         driver.quit();
 	}
 	
 	@Test
 	public void editTeacher(){
 		
-		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000/teacher");		
 		TeachersPage teachersPage = new TeachersPage(driver);               
@@ -40,13 +35,12 @@ public class TeacherTest extends FunctionalTest {
 		teachersPage.clickOnEmail();
 		teachersPage.enterEmail("99999@gmail.com");                
 		teachersPage.clickOnSave();
-        driver.quit();
+		driver.quit();
 	}
 	
 	@Test
 	public void deleteTeacher(){
-		
-		WebDriver driver=new ChromeDriver();
+				
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000/teacher");		
         TeachersPage teachersPage = new TeachersPage(driver);               
@@ -58,7 +52,6 @@ public class TeacherTest extends FunctionalTest {
 	@Test
 	public void addNewCourseTeacher(){
 		
-		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000/teacher");		
 		TeachersPage teachersPage = new TeachersPage(driver);              
@@ -69,7 +62,8 @@ public class TeacherTest extends FunctionalTest {
 		teachersPage.clickOnCourse();
 		teachersPage.selectCourseByValue(2);               
 		teachersPage.clickOnSaveCourseButton();
-        driver.quit();
+		driver.quit();
+
 	}
 	
 }

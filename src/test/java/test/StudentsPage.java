@@ -1,5 +1,7 @@
 package test;
 
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +11,21 @@ import org.openqa.selenium.support.ui.Select;
 public class StudentsPage extends PageObject {
 
 	public StudentsPage(WebDriver driver) {
-		super(driver);
+		super(driver);	
+		/*assertTrue(addIcon.isDisplayed());
+		assertTrue(name.isDisplayed());
+		assertTrue(accountName.isDisplayed());
+		assertTrue(email.isDisplayed());
+		assertTrue(saveButton.isDisplayed());
+		assertTrue(deleteButton.isDisplayed());
+		assertTrue(addNewCourseButton.isDisplayed());		
+		assertTrue(course.isDisplayed());
+		assertTrue(cardNumber.isDisplayed());
+		assertTrue(anyData.isDisplayed());		
+		assertTrue(toggleCourses.isDisplayed());
+		assertTrue(classesBought.isDisplayed());
+		assertTrue(saveCourseButton.isDisplayed());
+		assertTrue(courseFromList.isDisplayed());*/
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -33,10 +49,7 @@ public class StudentsPage extends PageObject {
 	 
 	 @FindBy(xpath="//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']")
 	    private WebElement deleteButton;
-	 
-	 @FindBy(xpath="//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']/span[@class='MuiButton-label']")
-	    private WebElement addNewCourseButton1;
-	 
+	 	 
 	 @FindBy(xpath="//div[not(@*)]/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
 	    private WebElement addNewCourseButton;
 	 	

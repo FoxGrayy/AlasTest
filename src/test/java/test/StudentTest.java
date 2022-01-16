@@ -1,17 +1,12 @@
 package test;
 
-import org.junit.After;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class StudentTest extends FunctionalTest {
 	
-	@Test
+	@Test 
 	public void newStudent(){
 		
-		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000");
 		
@@ -29,16 +24,13 @@ public class StudentTest extends FunctionalTest {
         studentsPage.clickOnCardNumber();
         studentsPage.enterCardNumber("5555646446");        
         studentsPage.clickOnSave();
-        
-        //driver.quit();
+        driver.quit();
 	}
 	@Test
 	public void editStudent(){
 		
-		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://localhost:3000");
-		
+		driver.get("http://localhost:3000");		
         StudentsPage studentsPage = new StudentsPage(driver);               
         studentsPage.clickOnAnyData();        
         studentsPage.clickOnName();
@@ -49,12 +41,12 @@ public class StudentTest extends FunctionalTest {
         studentsPage.enterEmail("99999@gmail.com");                
         studentsPage.clickOnSave();
         driver.quit();
+
 	}
 	
 	@Test
 	public void deleteStudent(){
-		
-		WebDriver driver=new ChromeDriver();
+
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000");
 		
@@ -68,7 +60,6 @@ public class StudentTest extends FunctionalTest {
 	@Test
 	public void addNewCourseStudent(){
 		
-		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000");
 		
