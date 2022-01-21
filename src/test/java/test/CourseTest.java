@@ -1,56 +1,56 @@
 package test;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 public class CourseTest extends FunctionalTest {
-	
-	@Test
-	public void newCourse(){
-		
-		driver.manage().window().maximize();
-		driver.get("http://localhost:3000/course");		
-        CoursesPage coursesPage = new CoursesPage(driver);               
-        coursesPage.clickOnAdd();
-        coursesPage.clickOnName();
-        coursesPage.enterName("11111rewqerwq");
-        coursesPage.clickOnCostPerClass(); 
-        coursesPage.enterCost("500");
-        coursesPage.clickOnClassPerWeek();   
-        coursesPage.enterClass("10");            
-        coursesPage.clickOnSave();   
-        driver.quit();
 
-	}
+	Util util = new Util();
+
 	@Test
-	public void editCourse(){
+	public void newCourse() {
 
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000/course");
-		
-		CoursesPage coursesPage = new CoursesPage(driver);                
-		coursesPage.clickOnAnyData();        
-		coursesPage.clickOnName();
-		coursesPage.enterName("peraaaa");
-		coursesPage.clickOnCostPerClass(); 
-        coursesPage.enterCost("50000000");
-        coursesPage.clickOnClassPerWeek();   
-        coursesPage.enterClass("10");            
-        coursesPage.clickOnSave();    
-        driver.quit();
 
+		CoursesPage coursesPage = new CoursesPage(driver);
+		coursesPage.clickOnAdd();
+		coursesPage.clickOnDeveloperCourseName();
+		coursesPage.enterDeveloperCourseName(util.randomString(10));
+		coursesPage.clickOnCostPerClass();
+		coursesPage.enterCost(util.randomStringNumber(3));
+		coursesPage.clickOnClassPerWeek();
+		coursesPage.enterClass(util.randomStringNumber(2));
+		coursesPage.clickOnSave();
 	}
-	
+
 	@Test
-	public void deleteCourse(){
-		
+	public void editCourse() {
+
 		driver.manage().window().maximize();
 		driver.get("http://localhost:3000/course");
-		
-		CoursesPage coursesPage = new CoursesPage(driver);               
-		coursesPage.clickOnAnyData();        
-		coursesPage.clickOnName();                     
-		coursesPage.clickOnDelete();    
-		driver.quit();
 
-	}	
+		CoursesPage coursesPage = new CoursesPage(driver);
+		coursesPage.clickOnAnyData();
+		coursesPage.clickOnDeveloperCourseName();
+		coursesPage.enterDeveloperCourseName(util.randomString(7));
+		coursesPage.clickOnCostPerClass();
+		coursesPage.enterCost(util.randomStringNumber(2));
+		coursesPage.clickOnClassPerWeek();
+		coursesPage.enterClass(util.randomStringNumber(2));
+		coursesPage.clickOnSave();
+	}
+
+	@Test
+	public void deleteCourse() {
+
+		driver.manage().window().maximize();
+		driver.get("http://localhost:3000/course");
+
+		CoursesPage coursesPage = new CoursesPage(driver);
+		coursesPage.clickOnAnyData();
+		coursesPage.clickOnDeveloperCourseName();
+		coursesPage.clickOnDelete();
+
+	}
+
 }
