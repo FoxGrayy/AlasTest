@@ -20,7 +20,6 @@ public class FunctionalTest {
 	@Test
 	@BeforeClass
 	@Parameters("browser")
-
 	public static void setUp(@Optional("firefox") String browser) throws Exception {
 		// Check if parameter passed from TestNG crossbrowser.xml is 'chrome'
 		if (browser.equalsIgnoreCase("chrome")) {
