@@ -1,6 +1,10 @@
-package test;
+package test.tests;
 
 import org.testng.annotations.Test;
+
+import test.Util;
+import test.pageobjects.TeachersPage;
+import test.tests.base.FunctionalTest;
 
 public class TeacherTest extends FunctionalTest {
 

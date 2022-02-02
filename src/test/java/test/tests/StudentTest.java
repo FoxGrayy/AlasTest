@@ -1,19 +1,26 @@
-package test;
+package test.tests;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import test.Util;
+import test.pageobjects.StudentsPage;
+import test.tests.base.FunctionalTest;
 
 public class StudentTest extends FunctionalTest {
 
 	Util util = new Util();
-
+	private StudentsPage studentsPage;
+	
+	@BeforeMethod
+	protected void navigateToCourses() {
+		//driver.manage().window().maximize();
+		driver.get("http://localhost:3000");
+		studentsPage = new StudentsPage(driver);
+	}
+	
 	@Test
 	public void newStudent() {
-
-		driver.manage().window().maximize();
-		driver.get("http://localhost:3000");
-
-		StudentsPage studentsPage = new StudentsPage(driver);
-
 		studentsPage.clickOnAdd();
 		studentsPage.clickOnName();
 		studentsPage.enterName(util.randomString(7));
@@ -30,11 +37,6 @@ public class StudentTest extends FunctionalTest {
 
 	@Test
 	public void editStudent() {
-
-		driver.manage().window().maximize();
-		driver.get("http://localhost:3000");
-
-		StudentsPage studentsPage = new StudentsPage(driver);
 		studentsPage.clickOnAnyData();
 		studentsPage.clickOnName();
 		studentsPage.enterName(util.randomString(7));
@@ -47,11 +49,6 @@ public class StudentTest extends FunctionalTest {
 
 	@Test
 	public void deleteStudent() {
-
-		driver.manage().window().maximize();
-		driver.get("http://localhost:3000");
-
-		StudentsPage studentsPage = new StudentsPage(driver);
 		studentsPage.clickOnAnyData();
 		studentsPage.clickOnName();
 		studentsPage.clickOnDelete();
@@ -59,11 +56,6 @@ public class StudentTest extends FunctionalTest {
 
 	@Test
 	public void addNewCourseStudent() {
-
-		driver.manage().window().maximize();
-		driver.get("http://localhost:3000");
-
-		StudentsPage studentsPage = new StudentsPage(driver);
 		studentsPage.clickOnAnyData();
 		studentsPage.clickOnToggleCourses();
 		studentsPage.clickOnAddNewCourseButton();
