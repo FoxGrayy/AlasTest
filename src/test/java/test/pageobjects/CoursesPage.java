@@ -1,9 +1,11 @@
-package test;
+package test.pageobjects;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import test.pageobjects.base.PageObject;
 
 public class CoursesPage extends PageObject {
 
@@ -14,17 +16,23 @@ public class CoursesPage extends PageObject {
 
 	@FindBy(className = "MuiFab-label")
 	private WebElement addIcon;
-	@FindBy(xpath = "//input[@name='developerCourseName']")
+	
+	@FindBy(xpath = ".//input[@name='developerCourseName']")
 	private WebElement developerCourseName;
-	@FindBy(xpath = "//input[@name='costPerClass']")
+	
+	@FindBy(xpath = ".//input[@name='costPerClass']")
 	private WebElement costPerClass;
-	@FindBy(xpath = "//input[@name='classesPerWeek']")
+	
+	@FindBy(xpath = ".//input[@name='classesPerWeek']")
 	private WebElement classPerWeek;
-	@FindBy(xpath = "//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
+	
+	@FindBy(xpath = ".//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
 	private WebElement saveButton;
+	
 	@FindBy(className = "MuiDataGrid-viewport")
 	private WebElement anyData;
-	@FindBy(xpath = "//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']")
+	
+	@FindBy(xpath = ".//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']")
 	private WebElement deleteButton;
 
 	public void clickOnAdd() {

@@ -1,26 +1,23 @@
-package test;
+package test.tests.base;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.jupiter.api.AfterAll;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 public class FunctionalTest {
 
-	public static WebDriver driver;
+	public WebDriver driver;
 
-	@Test
-	@BeforeClass
+	@BeforeMethod
 	@Parameters("browser")
-	public static void setUp(@Optional("firefox") String browser) throws Exception {
+	public void setUp(@Optional("firefox") String browser) throws Exception {
 		// Check if parameter passed from TestNG crossbrowser.xml is 'chrome'
 		if (browser.equalsIgnoreCase("chrome")) {
 			// set path to chromedriver.exe
@@ -48,13 +45,13 @@ public class FunctionalTest {
 		}
 	}
 
-	@AfterAll
+	@AfterMethod
 	public void cleanUp() {
 		driver.manage().deleteAllCookies();
 	}
 
-	@AfterClass
-	public static void tearDown() {
+	@AfterMethod
+	public void tearDown() {
 		driver.close();
 	}
 
