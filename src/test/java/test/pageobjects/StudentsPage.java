@@ -1,4 +1,4 @@
-package test;
+package test.pageobjects;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import test.pageobjects.base.PageObject;
 
 public class StudentsPage extends PageObject {
 
@@ -28,31 +30,31 @@ public class StudentsPage extends PageObject {
 	@FindBy(className = "MuiFab-label")
 	private WebElement addIcon;
 
-	@FindBy(xpath = "//input[@name='name']")
+	@FindBy(xpath = ".//input[@name='name']")
 	private WebElement name;
 
-	@FindBy(xpath = "//input[@name='surname']")
+	@FindBy(xpath = ".//input[@name='surname']")
 	private WebElement surname;
 
-	@FindBy(xpath = "//input[@name='accountName']")
+	@FindBy(xpath = ".//input[@name='accountName']")
 	private WebElement accountName;
 
-	@FindBy(xpath = "//input[@name='email']")
+	@FindBy(xpath = ".//input[@name='email']")
 	private WebElement email;
 
-	@FindBy(xpath = "//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
+	@FindBy(xpath = ".//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
 	private WebElement saveButton;
 
-	@FindBy(xpath = "//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']")
+	@FindBy(xpath = ".//div[@class='makeStyles-actions-13']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary']")
 	private WebElement deleteButton;
 
-	@FindBy(xpath = "//div[not(@*)]/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
+	@FindBy(xpath = ".//div[not(@*)]/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
 	private WebElement addNewCourseButton;
 
-	@FindBy(xpath = "//input[@name='developerCourseId']")
+	@FindBy(xpath = ".//input[@name='developerCourseId']")
 	private WebElement course;
 
-	@FindBy(xpath = "//input[@name='bankCardNumber']")
+	@FindBy(xpath = ".//input[@name='bankCardNumber']")
 	private WebElement cardNumber;
 
 	@FindBy(className = "MuiDataGrid-viewport")
@@ -61,13 +63,13 @@ public class StudentsPage extends PageObject {
 	@FindBy(className = "MuiButton-label")
 	private WebElement toggleCourses;
 
-	@FindBy(xpath = "//input[@name='classesBought']")
+	@FindBy(xpath = ".//input[@name='classesBought']")
 	private WebElement classesBought;
 
-	@FindBy(xpath = "//div[@class='makeStyles-actions-16']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
+	@FindBy(xpath = ".//div[@class='makeStyles-actions-16']/button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']")
 	private WebElement saveCourseButton;
 
-	@FindBy(xpath = "//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']")
+	@FindBy(xpath = ".//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']")
 	private WebElement courseFromList;
 
 	public void enterName(String name) {
