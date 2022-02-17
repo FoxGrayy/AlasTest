@@ -1,24 +1,24 @@
 package test.tests;
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import test.Util;
 import test.pageobjects.StudentsPage;
 import test.tests.base.FunctionalTest;
 
+@Listeners(test.tests.TestListener.class)
 public class StudentTest extends FunctionalTest {
 
 	Util util = new Util();
 	private StudentsPage studentsPage;
-	
+
 	@BeforeMethod
-	protected void navigateToCourses() {
-		//driver.manage().window().maximize();
+	protected void navigateToStudents() {	
 		driver.get("http://localhost:3000");
 		studentsPage = new StudentsPage(driver);
 	}
-	
+
 	@Test
 	public void newStudent() {
 		studentsPage.clickOnAdd();

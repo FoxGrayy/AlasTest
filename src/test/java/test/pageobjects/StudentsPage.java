@@ -27,6 +27,8 @@ public class StudentsPage extends PageObject {
 		// TODO Auto-generated constructor stub
 	}
 
+	PageObject po = new PageObject(driver);
+
 	@FindBy(className = "MuiFab-label")
 	private WebElement addIcon;
 
@@ -72,133 +74,139 @@ public class StudentsPage extends PageObject {
 	@FindBy(xpath = ".//div[@class='MuiPaper-root MuiMenu-paper MuiPopover-paper MuiPaper-elevation8 MuiPaper-rounded']")
 	private WebElement courseFromList;
 
-	public void enterName(String name) {
+	public StudentsPage enterName(String name) {
 		// this.name.clear();//does not work so it is replaced
 		this.name.sendKeys(Keys.CONTROL + "a");
 		this.name.sendKeys(Keys.DELETE);
 		this.name.sendKeys(name);
+		return this;
 	}
 
-	public void enterSurname(String surname) {
+	public StudentsPage enterSurname(String surname) {
 		this.surname.sendKeys(Keys.CONTROL + "a");
 		this.surname.sendKeys(Keys.DELETE);
 		this.surname.sendKeys(surname);
+		return this;
 	}
 
-	public void enterAccountName(String accountName) {
+	public StudentsPage enterAccountName(String accountName) {
 		this.accountName.sendKeys(Keys.CONTROL + "a");
 		this.accountName.sendKeys(Keys.DELETE);
 		this.accountName.sendKeys(accountName);
+		return this;
 	}
 
-	public void enterEmail(String email) {
+	public StudentsPage enterEmail(String email) {
 		this.email.sendKeys(Keys.CONTROL + "a");
 		this.email.sendKeys(Keys.DELETE);
 		this.email.sendKeys(email);
+		return this;
 	}
 
-	public void enterCardNumber(String cardNumber) {
+	public StudentsPage enterCardNumber(String cardNumber) {
 		this.cardNumber.clear();
 		this.cardNumber.sendKeys(cardNumber);
+		return this;
 	}
 
-	public void clickOnClassesBought() {
-		if (classesBought.isDisplayed() && classesBought.isEnabled()) {
-			classesBought.click();
-		}
+	public StudentsPage clickOnClassesBought() {
+		po.WaitToBeClickable(classesBought);
+		po.CheckIsDisplayedAndClick(classesBought);
+		return this;
 	}
 
-	public void clickOnCourse() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(course));
-		element.click();
+	public StudentsPage clickOnCourse() {
+		po.WaitToBeClickable(course);
+		po.CheckIsDisplayedAndClick(course);
+		return this;
 	}
 
-	public void clickOnName() {
-		if (name.isDisplayed() && name.isEnabled()) {
-			name.click();
-		}
+	public StudentsPage clickOnName() {
+		po.WaitToBeClickable(name);
+		po.CheckIsDisplayedAndClick(name);
+		return this;
+
 	}
 
-	public void clickOnSurName() {
-		if (surname.isDisplayed() && surname.isEnabled()) {
-			surname.click();
-		}
+	public StudentsPage clickOnSurName() {
+		po.WaitToBeClickable(surname);
+		po.CheckIsDisplayedAndClick(surname);
+		return this;
 	}
 
-	public void clickOnAccountName() {
-		if (accountName.isDisplayed() && accountName.isEnabled()) {
-			accountName.click();
-		}
+	public StudentsPage clickOnAccountName() {
+		po.WaitToBeClickable(accountName);
+		po.CheckIsDisplayedAndClick(accountName);
+		return this;
 	}
 
-	public void clickOnEmail() {
-		if (email.isDisplayed() && email.isEnabled()) {
-			email.click();
-		}
+	public StudentsPage clickOnEmail() {
+		po.WaitToBeClickable(email);
+		po.CheckIsDisplayedAndClick(email);
+		return this;
 	}
 
-	public void clickOnCardNumber() {
-		if (cardNumber.isDisplayed() && cardNumber.isEnabled()) {
-			cardNumber.click();
-		}
+	public StudentsPage clickOnCardNumber() {
+		po.WaitToBeClickable(cardNumber);
+		po.CheckIsDisplayedAndClick(cardNumber);
+		return this;
 	}
 
-	public void clickOnAdd() {
-		if (addIcon.isDisplayed() && addIcon.isEnabled()) {
-			addIcon.click();
-		}
+	public StudentsPage clickOnAdd() {
+		po.WaitToBeClickable(addIcon);
+		po.CheckIsDisplayedAndClick(addIcon);
+		return this;
 	}
 
-	public void clickOnSave() {
-		if (saveButton.isDisplayed() && saveButton.isEnabled()) {
-			saveButton.click();
-		}
+	public StudentsPage clickOnSave() {
+		po.WaitToBeClickable(saveButton);
+		po.CheckIsDisplayedAndClick(saveButton);
+		return this;
 	}
 
-	public void clickOnDelete() {
-		if (deleteButton.isDisplayed() && deleteButton.isEnabled()) {
-			deleteButton.click();
-		}
+	public StudentsPage clickOnDelete() {
+		po.WaitToBeClickable(deleteButton);
+		po.CheckIsDisplayedAndClick(deleteButton);
+		return this;
 	}
 
-	public void clickOnAnyData() {
-		if (anyData.isDisplayed() && anyData.isEnabled()) {
-			anyData.click();
-		}
+	public StudentsPage clickOnAnyData() {
+		po.WaitToBeClickable(anyData);
+		po.CheckIsDisplayedAndClick(anyData);
+		return this;
 	}
 
-	public void clickOnToggleCourses() {
-		if (toggleCourses.isDisplayed() && toggleCourses.isEnabled()) {
-			toggleCourses.click();
-		}
+	public StudentsPage clickOnToggleCourses() {
+		po.WaitToBeClickable(toggleCourses);
+		po.CheckIsDisplayedAndClick(toggleCourses);
+		return this;
 	}
 
-	public void clickOnAddNewCourseButton() {
-		if (addNewCourseButton.isDisplayed() && addNewCourseButton.isEnabled()) {
-			addNewCourseButton.click();
-		}
+	public StudentsPage clickOnAddNewCourseButton() {
+		po.WaitToBeClickable(addNewCourseButton);
+		po.CheckIsDisplayedAndClick(addNewCourseButton);
+		return this;
 	}
 
 	// select course from drop down
-	public void selectCourseByValue(int value) {
-		if (courseFromList.isDisplayed() && courseFromList.isEnabled()) {
-			courseFromList.click();
-		}
-
+	public StudentsPage selectCourseByValue(int value) {
+		po.WaitToBeClickable(courseFromList);
+		po.CheckIsDisplayedAndClick(courseFromList);
+		return this;
 	}
 
 	// enter value of a class
-	public void enterClassesBought(String numberOfClasses) {
+	public StudentsPage enterClassesBought(String numberOfClasses) {
 		this.classesBought.sendKeys(Keys.CONTROL + "a");
 		this.classesBought.sendKeys(Keys.DELETE);
 		this.classesBought.sendKeys(numberOfClasses);
+		return this;
 	}
 
-	public void clickOnSaveCourseButton() {
-		if (saveCourseButton.isDisplayed() && saveCourseButton.isEnabled()) {
-			saveCourseButton.click();
-		}
+	public StudentsPage clickOnSaveCourseButton() {
+		po.WaitToBeClickable(saveCourseButton);
+		po.CheckIsDisplayedAndClick(saveCourseButton);
+		return this;
 	}
 
 }
